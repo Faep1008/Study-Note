@@ -9,7 +9,7 @@
       - [Redis常用配置](#Redis常用配置)
       - [通用命令](#通用命令)
       - [单线程](#单线程)
-    - [Redis API使用](#Redis API使用)
+    - [Redis API使用](#Redis-API使用)
       - [字符串string](#字符串string)
       - [哈希Hash](#哈希Hash)
       - [列表list](#列表list)
@@ -26,8 +26,8 @@
       - [五、HyperLogLog](#五、HyperLogLog)
       - [六、GEO](#六、GEO)
     - [Redis持久化](#Redis持久化)
-      - [RDB（Redis DataBase）](#RDB（Redis DataBase）)
-      - [AOF（Append Only File）](#AOF（Append Only File）)
+      - [RDB（Redis DataBase）](#RDB（Redis-DataBase）)
+      - [AOF（Append Only File）](#AOF（Append-Only-File）)
 
 <!-- /TOC -->
 
