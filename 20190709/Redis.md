@@ -99,7 +99,7 @@ PONG
 （1）一次只运行一个命令  
 （2）拒绝长(慢)命令，如keys，不推荐使用此命令  
 
-## Redis API使用
+## Redis-API使用
 ### 字符串string
 #### 键值结构
 `key`  `value`    （value的大小限制512M）
@@ -388,7 +388,7 @@ Redis所有数据保存在内存中，对数据的更新将异步的保存到磁
 1、快照（RDB）  
 2、写日志（AOF）  
 
-### RDB（Redis DataBase）
+### RDB（Redis-DataBase）
 快照文件，二进制   
 Redis—创建—>RDB文件(二进制)  
 RDB文件(二进制)—启动载入—>Redis  
@@ -424,7 +424,7 @@ redis-cli执行save命令会生成RDB文件
 3、bgsave不会阻塞redis，但是会fork新进程  
 4、save自动配置满足任一条件就会被执行  
 
-### AOF（Append Only File）
+### AOF（Append-Only-File）
 #### RDB现存的问题
 1、耗时、耗性能  
 2、生成的数据不可控容易丢失数据  
