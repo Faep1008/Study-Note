@@ -9,6 +9,7 @@
 
 - <a href="/20190709/Redis.md" target="_blank">Redis知识点</a>  
 - <a href="/20190711/Redis分布式锁.md" target="_blank">基于Redis做分布式锁</a>
+- <a href="/20190711/关于Redis问题.md" target="_blank">关于Redis缓存穿透、缓存雪崩和缓存击穿</a>
 
 ### 三、JAVA集合
 
