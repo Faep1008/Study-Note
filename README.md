@@ -3,7 +3,7 @@
 
 ### 一、Maven
 
-<a href="/20190708/maven.md" target="_blank">Maven知识点</a>
+- <a href="/20190708/maven.md" target="_blank">Maven知识点</a>
 
 ### 二、Redis
 
