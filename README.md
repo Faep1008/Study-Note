@@ -7,7 +7,8 @@
 
 ### 二、Redis
 
-<a href="/20190709/Redis.md" target="_blank">Redis知识点</a>
+- <a href="/20190709/Redis.md" target="_blank">Redis知识点</a>  
+- <a href="/20190711/Redis分布式锁.md" target="_blank">基于Redis做分布式锁</a>
 
 ### 三、JAVA集合
 
