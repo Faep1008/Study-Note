@@ -17,18 +17,16 @@
 - [ ] LinkedList
 - [ ] HashMap
 - [ ] HashTable
-### 四、消息队列
-
-- RabbitMQ
-  - [x] <a href="/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
-  - [ ] RabbitMQ入门
-  - [ ] RabbitMQ客户端开发
-  - [ ] RabbitMQ进阶
-  - [ ] RabbitMQ管理
-  - [ ] RabbitMQ配置
-  - [ ] RabbitMQ运维
-  - [ ] RabbitMQ集群
-  - [ ] RabbitMQ高阶
-  - [ ] RabbitMQ扩展
+### 四、RabbitMQ消息中间件
+- [x] <a href="/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
+- [ ] RabbitMQ入门
+- [ ] RabbitMQ客户端开发
+- [ ] RabbitMQ进阶
+- [ ] RabbitMQ管理
+- [ ] RabbitMQ配置
+- [ ] RabbitMQ运维
+- [ ] RabbitMQ集群
+- [ ] RabbitMQ高阶
+- [ ] RabbitMQ扩展
   
 ### 五、JAVA并发编程
