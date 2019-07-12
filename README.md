@@ -3,13 +3,13 @@
 
 ### 一、Maven
 
-- <a href="/20190708/maven.md" target="_blank">Maven知识点</a>
+- [x] <a href="/20190708/maven.md" target="_blank">Maven知识点</a>
 
 ### 二、Redis
 
-- <a href="/20190709/Redis.md" target="_blank">Redis知识点</a>  
-- <a href="/20190711/Redis分布式锁.md" target="_blank">基于Redis做分布式锁</a>
-- <a href="/20190711/关于Redis问题.md" target="_blank">关于Redis缓存穿透、缓存雪崩和缓存击穿</a>
+- [x] <a href="/20190709/Redis.md" target="_blank">Redis知识点</a>  
+- [x] <a href="/20190711/Redis分布式锁.md" target="_blank">基于Redis做分布式锁</a>
+- [x] <a href="/20190711/关于Redis问题.md" target="_blank">关于Redis缓存穿透、缓存雪崩和缓存击穿</a>
 
 ### 三、JAVA集合
 
@@ -21,12 +21,14 @@
 
 - RabbitMQ
   - [x] <a href="/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
-  - [] RabbitMQ入门
-  - [] RabbitMQ客户端开发
-  - [] RabbitMQ进阶
-  - [] RabbitMQ管理
-  - [] RabbitMQ配置
-  - [] RabbitMQ运维
-  - [] RabbitMQ集群
-  - [] RabbitMQ高阶
-  - [] RabbitMQ扩展
+  - [ ] RabbitMQ入门
+  - [ ] RabbitMQ客户端开发
+  - [ ] RabbitMQ进阶
+  - [ ] RabbitMQ管理
+  - [ ] RabbitMQ配置
+  - [ ] RabbitMQ运维
+  - [ ] RabbitMQ集群
+  - [ ] RabbitMQ高阶
+  - [ ] RabbitMQ扩展
+  
+### 五、JAVA并发编程
