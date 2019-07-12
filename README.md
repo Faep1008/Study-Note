@@ -19,3 +19,12 @@
 
 - RabbitMQ
   - <a href="/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
+  - RabbitMQ入门
+  - RabbitMQ客户端开发
+  - RabbitMQ进阶
+  - RabbitMQ管理
+  - RabbitMQ配置
+  - RabbitMQ运维
+  - RabbitMQ集群
+  - RabbitMQ高阶
+  - RabbitMQ扩展
