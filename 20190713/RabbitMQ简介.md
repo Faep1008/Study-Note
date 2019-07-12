@@ -20,7 +20,11 @@
   
 RabbitMQ就是消息中间件的一种，其他还有Kafka、ActiveMQ、RocketMQ等。
 
-#### <i class="icon-chevron-sign-left"></i>消息中间件的作用
+  
+---
+    
+
+#### 消息中间件的作用
 - 1、解耦
 两边可以独立的扩展或修改处理过程。  
 - 2、冗余（存储）
@@ -37,12 +41,17 @@ RabbitMQ就是消息中间件的一种，其他还有Kafka、ActiveMQ、RocketMQ
 消息中间件通过一个缓冲层来帮助任务最高效率的执行，写入消息中间件的处理会尽可能的快速。  
 - 8、异步通信
 提供异步处理的机制，允许把一些消息放入中间件中，但并不立即处理他，在之后需要的时候再慢慢处理。  
+  
+---
+  
 
 ### RabbitMQ
 #### 起源
 RabbitMQ是采用Erlang语言实现的AMQP（Advanced Message Queuing Protocol ，高级消息队列协议）的消息中间件，最初起源于金融系统，用在分布式系统中存储转发消息。    
 
 RabbitMQ 是由 RabbitMQ Technologies Ltd 开发并且提供商业支持的。取RabbitMQ这个名字是因为兔子行动非常迅速而且繁殖起来非常疯狂，RabbitMQ的开创者认为以此命名这个分布式软件再合适不过了。  
+
+---
 
 #### RabbitMQ的特性
 - 1、可靠性
@@ -61,6 +70,8 @@ RabbitMQ 是由 RabbitMQ Technologies Ltd 开发并且提供商业支持的。�
 提供了一个易用的用户界面，可以监控和管理消息、集群中的节点等。  
 - 8、插件机制
 提供多种插件，以实现从多方面进行扩展，也可以自己编写插件。  
+
+---
 
 #### RabbitMQ的安装及使用
 TODO  
