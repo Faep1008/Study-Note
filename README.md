@@ -13,20 +13,20 @@
 
 ### 三、JAVA集合
 
--[x] <a href="/20190710/ArrayList.md" target="_blank">ArrayList源码解析</a>
--[] LinkedList
--[] HashMap
--[] HashTable
+- [x] <a href="/20190710/ArrayList.md" target="_blank">ArrayList源码解析</a>
+- [] LinkedList
+- [] HashMap
+- [] HashTable
 ### 四、消息队列
 
 - RabbitMQ
-  -[x] <a href="/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
-  -[] RabbitMQ入门
-  -[] RabbitMQ客户端开发
-  -[] RabbitMQ进阶
-  -[] RabbitMQ管理
-  -[] RabbitMQ配置
-  -[] RabbitMQ运维
-  -[] RabbitMQ集群
-  -[] RabbitMQ高阶
-  -[] RabbitMQ扩展
+  - [x] <a href="/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
+  - [] RabbitMQ入门
+  - [] RabbitMQ客户端开发
+  - [] RabbitMQ进阶
+  - [] RabbitMQ管理
+  - [] RabbitMQ配置
+  - [] RabbitMQ运维
+  - [] RabbitMQ集群
+  - [] RabbitMQ高阶
+  - [] RabbitMQ扩展
