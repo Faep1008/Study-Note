@@ -55,20 +55,20 @@ BindingKey相当于包裹的目的地
 #### 交换器类型
 RabbitMQ常用的交换器类型有fanout、direct、topic、headers四种。
 
-- fanout
+- fanout  
 会把所有发送到该交换器的消息路由到所有与该交换器绑定的队列中。
 
-- direct
+- direct  
 会把消息路由到那些BindingKey和RoutingKey完全匹配的队列中。
 
-- topic
+- topic  
 是direct的加强版，也是把消息路由到那些BindingKey和RoutingKey相匹配的队列中，但是匹配规则有些不同，约定：
 
   - RoutingKey是一个点号“.”分隔的字符串，被分隔的每一段独立的字符串称为一个单词，如com.epoint.faep
   - BindingKey和RoutingKey一样也是点号“.”分隔的字符串
   - BindingKey中可以存在两种特殊的字符串“*”和“#”，用于模糊匹配，其中“*”用于匹配一个单词，“#”用于匹配多个单词（可以是0个）。
 
-- headers 
+- headers   
 headers类型的交换器不依赖于路由键的匹配规则来路由消息，而是根据发送的消息内容中的headers 属性进行匹配。在绑定队列和交换器时制定一组键值对 当发送消息到交换器时，RabbitMQ会获取到该消息的 headers (也是一个键值对的形式)，对比其中的键值对是否完全匹配队列和交换器绑定时指定的键值对，如果完全匹配则消息会路由到该队列，否则不会路由到该队列 headers类型的交换器性能会很差，而且也不实用，基本上不会看到它的存在。
 
 ## RabbitMQ运转流程
