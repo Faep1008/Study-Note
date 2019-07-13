@@ -24,9 +24,8 @@
 - [ ] RabbitMQ进阶
 - [ ] RabbitMQ管理
 - [ ] RabbitMQ配置
-- [ ] RabbitMQ运维
 - [ ] RabbitMQ集群
-- [ ] RabbitMQ高阶
-- [ ] RabbitMQ扩展
+
+
   
 ### 五、JAVA并发编程
