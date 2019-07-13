@@ -19,7 +19,7 @@
 - [ ] HashTable
 ### 四、RabbitMQ消息中间件
 - [x] <a href="/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
-- [ ] RabbitMQ入门
+- [x] <a href="/20190713/RabbitMQ入门.md" target="_blank">RabbitMQ入门</a>
 - [ ] RabbitMQ客户端开发
 - [ ] RabbitMQ进阶
 - [ ] RabbitMQ管理
