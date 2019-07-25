@@ -57,7 +57,8 @@
   
   
 ### 九、Linux
-- [x] <a href="/notes/20190725/Linux的文件权限" target="_blank">Linux的文件权限</a>  
+- [x] <a href="/notes/20190725/Linux的文件权限.md" target="_blank">Linux的文件权限</a>  
+- [ ] Linux的目录配置
 
 
 ### 十、Java8新特性
