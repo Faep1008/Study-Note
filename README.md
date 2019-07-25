@@ -57,6 +57,7 @@
   
   
 ### 九、Linux
+- [x] <a href="/notes/20190725/Linux的文件权限" target="_blank">Linux的文件权限</a>  
 
 
 ### 十、Java8新特性
