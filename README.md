@@ -35,11 +35,11 @@
 
 ### 五、设计模式
 
-### 二、Maven
+### 六、Maven
 - [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点</a>
   
   
-### 六、Linux
+### 七、Linux
 - [x] <a href="/notes/20190725/Linux的文件权限.md" target="_blank">Linux的文件权限</a>  
 - [x] <a href="/notes/20190726/Linux的目录配置.md" target="_blank">Linux的目录配置</a>  
 - [x] <a href="/notes/20190730/Linux的文件与目录管理.md" target="_blank">Linux的文件与目录管理</a>  
@@ -49,6 +49,6 @@
 - [ ] 认识与学习BASH
 
 
-### 七、领域驱动设计
+### 八、领域驱动设计
 
 
