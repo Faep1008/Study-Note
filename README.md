@@ -22,9 +22,6 @@
   - [x] <a href="/notes/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
   - [x] <a href="/notes/20190713/RabbitMQ入门.md" target="_blank">RabbitMQ入门</a>
   - [ ] RabbitMQ客户端开发
-  - [ ] RabbitMQ进阶
-  - [ ] RabbitMQ管理
-  - [ ] RabbitMQ配置
   - [ ] RabbitMQ集群
 - [ ] Kafka
 
