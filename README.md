@@ -12,7 +12,7 @@
 - [ ] JVM
 
 - [ ] 工具
-  -[x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点</a>  
+  - [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点</a>  
 
 ### 二、数据库
 - Redis  
