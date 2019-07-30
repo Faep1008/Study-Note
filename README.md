@@ -59,7 +59,7 @@
 ### 九、Linux
 - [x] <a href="/notes/20190725/Linux的文件权限.md" target="_blank">Linux的文件权限</a>  
 - [x] <a href="/notes/20190726/Linux的目录配置.md" target="_blank">Linux的目录配置</a>  
-- [ ] Linux的文件与目录管理
+- [x] <a href="/notes/20190730/Linux的文件与目录管理.md" target="_blank">Linux的文件与目录管理</a>  
 
 
 ### 十、数据结构
