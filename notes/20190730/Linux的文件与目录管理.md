@@ -122,8 +122,8 @@ whereis只是根据几个特殊目录来处理的，速度比较快，要想知�
 <img src="img/18.png">  
 例如：  
 find file -mtime 4  
-find file -mtime +4  
-find file -mtime -4  
+find file -mtime +4    
+find file -mtime -4    
 其搜索的时间范围如下：  
 <img src="img/20.png">  
 <img src="img/19.png">  
