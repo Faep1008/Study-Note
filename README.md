@@ -1,9 +1,15 @@
 # Study-Note
 ## 技术知识点笔记
 
-### 一、Maven
+### 一、JAVA
+- [ ] JAVA集合
+  - [x] <a href="/notes/20190710/ArrayList.md" target="_blank">ArrayList源码解析</a>
+  - [ ] LinkedList
+  - [ ] HashMap
+  
+- [ ] JAVA并发编程
 
-- [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点</a>
+- [ ] JVM
 
 ### 二、数据库
 - Redis  
@@ -11,13 +17,7 @@
   - [x] <a href="/notes/20190711/Redis分布式锁.md" target="_blank">基于Redis做分布式锁</a>
   - [x] <a href="/notes/20190711/关于Redis问题.md" target="_blank">关于Redis缓存穿透、缓存雪崩和缓存击穿</a>
 
-### 三、JAVA集合
-
-- [x] <a href="/notes/20190710/ArrayList.md" target="_blank">ArrayList源码解析</a>
-- [ ] LinkedList
-- [ ] HashMap
-
-### 四、消息中间件
+### 三、消息中间件
 - [x] RabbitMQ
   - [x] <a href="/notes/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
   - [x] <a href="/notes/20190713/RabbitMQ入门.md" target="_blank">RabbitMQ入门</a>
@@ -26,34 +26,20 @@
 - [ ] Kafka
 
 
-  
-### 五、JAVA并发编程
-
-
-
-
-### 六、Spring
+### 四、Spring
 - [ ] Spring Framework
 - [ ] Spring MVC
 - [ ] Spring boot
 - [ ] Spring Cloud
 
-### 七、JVM
 
+### 五、设计模式
 
-
-### 八、Java程序性能优化
-- 设计优化
-  - [ ] 单例模式
-  - [ ] 代理模式
-  - [ ] 亨元模式
-  - [ ] 装饰者模式
-  - [ ] 观察者模式
-  - [ ] Value Object模式
-  - [ ] 业务代理模式
+### 二、Maven
+- [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点</a>
   
   
-### 九、Linux
+### 六、Linux
 - [x] <a href="/notes/20190725/Linux的文件权限.md" target="_blank">Linux的文件权限</a>  
 - [x] <a href="/notes/20190726/Linux的目录配置.md" target="_blank">Linux的目录配置</a>  
 - [x] <a href="/notes/20190730/Linux的文件与目录管理.md" target="_blank">Linux的文件与目录管理</a>  
@@ -63,6 +49,6 @@
 - [ ] 认识与学习BASH
 
 
-### 十、领域驱动设计
+### 七、领域驱动设计
 
 
