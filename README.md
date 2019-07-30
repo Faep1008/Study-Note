@@ -2,16 +2,16 @@
 ## 技术知识点笔记
 
 ### 一、JAVA
-- [ ] JAVA集合
+- JAVA集合
   - [x] <a href="/notes/20190710/ArrayList.md" target="_blank">ArrayList源码解析</a>
   - [ ] LinkedList
   - [ ] HashMap
   
-- [ ] JAVA并发编程
+- JAVA并发编程
 
-- [ ] JVM
+- JVM
 
-- [ ] 工具
+- 工具
   - [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点</a>  
 
 ### 二、数据库
@@ -21,12 +21,12 @@
   - [x] <a href="/notes/20190711/关于Redis问题.md" target="_blank">关于Redis缓存穿透、缓存雪崩和缓存击穿</a>
 
 ### 三、消息中间件
-- [x] RabbitMQ
+- RabbitMQ
   - [x] <a href="/notes/20190713/RabbitMQ简介.md" target="_blank">RabbitMQ简介</a>
   - [x] <a href="/notes/20190713/RabbitMQ入门.md" target="_blank">RabbitMQ入门</a>
   - [ ] RabbitMQ客户端开发
   - [ ] RabbitMQ集群
-- [ ] Kafka
+- Kafka
 
 
 ### 四、Spring
