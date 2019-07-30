@@ -59,8 +59,15 @@
 ### 九、Linux
 - [x] <a href="/notes/20190725/Linux的文件权限.md" target="_blank">Linux的文件权限</a>  
 - [x] <a href="/notes/20190726/Linux的目录配置.md" target="_blank">Linux的目录配置</a>  
+- [ ] Linux的文件与目录管理
 
 
+### 十、数据结构
 
-### 十、Java8新特性
+### 十一、Nginx
 
+### 十二、Dubbo
+
+### 十三、ZooKeeper
+
+### 十四、计算机网络
