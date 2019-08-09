@@ -1,4 +1,4 @@
-# Study-Note
+# Note
 ## 技术知识点笔记
 
 ### 一、JAVA
