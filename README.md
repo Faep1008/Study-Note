@@ -13,7 +13,7 @@
 
 - 工具
   - [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点</a>  
-
+  - [x] <a href="/notes/20190820/JUnit单元测试.md" target="_blank">JUnit单元测试</a>
 ### 二、数据库
 - Redis  
   - [x] <a href="/notes/20190709/Redis.md" target="_blank">Redis知识点</a>  
