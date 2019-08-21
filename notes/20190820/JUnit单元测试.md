@@ -65,6 +65,15 @@ API契约是一种观点：把一个应用程序编程接口（API）当作是�
 - 5、定义一个测试`@Test`方法，该方法实例化程序并调用所提供的参数
 
 代码示例如下：  
+一个类包含一个add方法用于单元测试：  
+```java
+public class Calculator{
+    public double add(double number1, double number2) {
+        return number1 + number2;
+    }
+}
+```
+单元测试代码如下：  
 ```java
 @RunWith(value = Parameterized.class)
 public class ParamterizedTest {
