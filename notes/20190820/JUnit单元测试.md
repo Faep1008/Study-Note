@@ -130,10 +130,7 @@ facade是一种设计模式，它为子系统中的一组接口提供了一个�
 下面的代码显示了如何将多个测试类组合成一个单独的测试集（test suite）  
 ```java
 @RunWith(value=org.junit.runners.Suite.class)
-@SuiteClasses注释找那个指定测试类，来列出我们想要在这个测试中包含的所有测试。这些测试类中的所有@Test方法都将包含到该Suite中。
-
-组合一组测试集
-(value={XXTest1.class, XXTest2.class})
+@SuiteClasses(value={XXTest1.class, XXTest2.class})
 public class MyJUnitTest {
 }
 ```
