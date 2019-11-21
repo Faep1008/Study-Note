@@ -22,6 +22,8 @@
   - [x] <a href="/notes/20190709/Redis.md" target="_blank">Redis知识点</a>  
   - [x] <a href="/notes/20190711/Redis分布式锁.md" target="_blank">基于Redis做分布式锁</a>
   - [x] <a href="/notes/20190711/关于Redis问题.md" target="_blank">关于Redis缓存穿透、缓存雪崩和缓存击穿</a>
+- SQLite
+  - [x] <a href="/notes/20191121/SQLite知识点.md" target="_blank">SQLite知识点</a>  
 
 ### 三、消息中间件
 - RabbitMQ
