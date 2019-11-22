@@ -90,5 +90,9 @@
 - [ ] vim程序编辑器
 - [ ] 认识与学习BASH
 
+### 七、Web服务器
+- Nginx
+  - [x] <a href="/notes/20191122/Nginx安装与配置.md" target="_blank">Nginx安装与配置</a>  
+
 
 
