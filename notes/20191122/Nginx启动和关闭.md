@@ -15,7 +15,7 @@ Nginx的停止方式有很多种，一般通过发送系统信号给Nginx主进�
 ps -ef | grep nginx
 ```  
 查询结果如下图所示：  
-<img src='images/step8.png' width='60%'>  
+<img src='images/step8.png'>  
 从上图可以看到，1个Nginx进程的备注信息为“master process”，表示它为主进程，另外一个进程备注信息为“worker process”，表示它们为子进程。20411为主进程号。  
 如果在nginx.conf配置文件中指定了pid文件存放的路径，该文件中存放的就是Nginx当前的主进程号。如果没有指定pid文件存放的路径，Nginx.pid文件默认存放在nginx安装目录的logs目录下。所以，可以直接通过以下命令来完成平滑重启，省下寻找Nginx主进程号的步骤：  
 ```shell
