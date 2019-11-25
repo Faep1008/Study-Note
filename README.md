@@ -94,6 +94,6 @@
 - Nginx
   - [x] <a href="/notes/20191122/Nginx安装与配置.md" target="_blank">Nginx安装与配置</a>  
   - [x] <a href="/notes/20191122/Nginx启动和关闭.md" target="_blank">Nginx启动和关闭</a>  
-
+  - [x] <a href="/notes/20191125/Nginx的配置文件.md" target="_blank">Nginx的配置文件</a>  
 
 
