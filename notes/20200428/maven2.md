@@ -1,7 +1,8 @@
-# Maven
+# Maven知识点2
 
 ## 一、Maven的作用
-Maven是基于项目对象模型(POM project object model)，用通俗点的话说就是对要构建的项目进行建模，将要构建的项目看成是一个对象（Object），用PO来指代这个对象，pom.xml就是PO对象的XML描述。  
+目的是一个可以用于构建和管理任何基于Java的项目的工具，想要一种标准的方式来构建项目，清晰地定义项目的组成，一种简单的方式来发布项目信息，以及一种在多个项目中共享JAR的方式。  
+Maven是基于项目对象模型(POM project object model)来构建项目，用通俗点的话说就是对要构建的项目进行建模，将要构建的项目看成是一个对象（Object），用PO来指代这个对象，pom.xml就是PO对象的XML描述。  
 
 
 ## 二、Maven安装配置
@@ -279,7 +280,7 @@ Maven项目的核心是pom.xml。项目对象模型(POM project object model)，
 - `<groupId>` 指定当前构建工程的组别ID，一般为公司网址的倒叙+业务名。
 - `<artifactId>` 指定当前构建工程的名称。
 - `<version>` 指定当前构建工程的版本号。主要分为`release`版和`snapshot`版。
-- `<packaging>` 指定当前工程的打包类型。常用的有`war`、`jar`和`pom`等。  
+- `<packaging>` 指定当前工程的打包类型。常用的有`war`、`jar`、`pom`和`maven-plugin`等。  
 其中通过`<groupId>`、`<artifactId>`和`<version>`可以在Maven服务器上确定依赖。  
 
 #### 7.1.3、<properties>标签
@@ -395,17 +396,31 @@ Maven生命周期的步骤会默认把前面的步骤执行一遍。
 
 
 ## 十、Maven插件
-### 10.1、插件介绍
+### 10.1、插件解析机制
+Maven本质上是一个插件执行框架，它的核心并不执行任何具体的构建任务，所有这些任务都交给插件来完成。  
 与我们所依赖的构件一样，插件也是基于坐标保存在我们的Maven仓库当中的。在用到插件的时候会先从本地仓库查找插件，如果本地仓库没有则从远程仓库查找插件并下载到本地仓库。  
-为了方便用户使用和配置插件，Maven不需要用户提供完整的插件坐标信息，就可以解析得到正确的插件。  
+为了方便用户使用和配置插件，Maven不需要用户提供完整的插件坐标信息，就可以解析得到正确的插件。比如：在用户没有提供插件版本的情况下，Maven会自动解析插件版本。  
 一般来说，中央仓库所包含的插件完全能够满足我们的需要，因此也不需要配置其他的插件仓库。  
-为了简化插件的配置和使用，在用户没有提供插件版本的情况下，Maven会自动解析插件版本。  
 
-### 10.2、插件解析机制
-Maven可以通过`插件前缀:插件目标`的方式执行命令.  
+了解插件后续必须要了解两个概念，插件目标和插件绑定。  
+#### 插件目标
+插件目标可以理解为一个插件里的一个功能，一个插件里可能有多个功能，这些功能都聚集在一个插件里，每个功能就是一个插件目标。
 
-### 10.3、插件与生命周期绑定
-生命周期的阶段phase与插件的目标goal相互绑定, 用以完成实际的构建任务。  
+#### 插件绑定
+Maven的生命周期与插件相互绑定，用以完成实际的构建任务。 具体而言，就是生命周期的阶段和插件的目标相互绑定。
+
+
+#### 10.1.1、插件的默认groupId
+如果是maven的官方插件，pom.xml配置的时候可以省略groupId，Maven在解析的时候会自动补齐，但为了可读性不推荐这种做法。  
+#### 10.1.2、解析插件版本
+如果pom.xml配置时没有提供插件的版本，Maven会自动解析插件的版本。  
+另外超级POM中已经指定了核心插件的版本，所有pom都可以隐式继承。  
+如果用户使用某个插件没有指定版本，且不属于核心插件范畴，Maven会遍历本地仓库和所有远程仓库，计算出`latest`和`release`的值。  
+maven2采用的是`latest`，即最新快照版。  
+maven3采用的是`release`，即最新发布版。  
+
+### 10.2、插件与生命周期绑定
+生命周期的阶段`phase`与插件的目标`goal`相互绑定, 用以完成实际的构建任务。一个插件可以实现多个目标（Goal）。  
 如:`$ mvn compiler:compile`: 冒号前是插件前缀, 后面是该插件目标(即: `maven-compiler-plugin`的`compile`目标).
 而该目标绑定了`default`生命周期的`compile`阶段:因此, 他们的绑定能够实现项目编译的目的。  
   
@@ -420,8 +435,8 @@ Maven 默认为一些核心的生命周期绑定了插件目标, 当用户通过
 |install|maven-install-plugin:install|将项目输出安装到本地仓库|
 |deploy|maven-deploy-plugin:deploy|将项目输出部署到远程仓库|
 
-### 10.4、常用插件
-#### 10.4.1、打包插件
+### 10.3、常用插件
+#### 10.3.1、打包插件
 `maven-jar-plugin`，打包（jar）插件，设定`MAINFEST.MF`文件的参数。  
 ```xml
 <!-- 可以从 SVN 中获取版本号，并将其变成环境变量，交由其他插件使用 -->
@@ -531,7 +546,7 @@ SVN-Revision: 15828
 - Specification-Version：定义扩展规范的版本
 - SVN-Revision：本地SVN版本
 
-#### 10.4.2、Tomcat插件
+#### 10.3.2、Tomcat插件
 在war工程的pom中  
 ```xml
 <build>
@@ -554,7 +569,7 @@ SVN-Revision: 15828
 ```
 运行插启动tomcat，执行命令`mvn -tomcat7:run`
 
-#### 10.4.3、编译插件
+#### 10.3.3、编译插件
 指定编译版本
 ```xml
 <plugin>
@@ -569,3 +584,271 @@ SVN-Revision: 15828
 </plugin>
 ```
 
+### 10.4、个性化插件
+#### 10.4.1、主要步骤说明
+- 创建一个`maven-plugin`项目，插件本身也是`maven`项目，区别就是`packaging`标签是`maven-plugin`。可以用`maven-archetype-plugin`快速创建。  
+- 为插件写目标，每个插件都必须包含一个或多个目标，Maven称之为`Mojo`（`Maven Old Java Object`），和Java的POJO对应。编写插件的时候必须提供一个或多个继承自`AbstractMojo`的类。
+- 为目标提供配置点，大部分的Maven插件及其目标都是可配的。
+- 编写代码实现目标行为，根据实际的需要实现Mojo。
+- 错误处理及日志，Mojo发生异常时，应该提供可靠的日志信息。
+- 插件测试
+
+#### 10.4.2、案例
+编写一个用于代码统计的案例：使用该插件，用户可以了解到Maven项目中各个源代码目录下文件的数量，以及它们加起来共有多少行代码  
+  
+首先创建一个`maven-plugin`项目，确保其pom中有如下内容：  
+
+```xml
+<properties>
+	<maven.version>3.0</maven.version>
+</properties>
+<dependencies>
+	<dependency>
+		<groupId>org.apache.maven</groupId>
+		<artifactId>maven-plugin-api</artifactId>
+		<version>${maven.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.maven.plugin-tools</groupId>
+		<artifactId>maven-plugin-annotations</artifactId>
+		<version>3.2</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.plexus</groupId>
+		<artifactId>plexus-utils</artifactId>
+		<version>3.0.8</version>
+	</dependency>
+</dependencies>
+```
+然后写一个Mojo类继承抽象类`AbstractMojo`：
+```java
+package com.epoint.maven.plugin.CodeCountPlugin;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.maven.model.Resource;
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
+
+/**
+ * 计算代码行数
+ *
+ * @goal codecount
+ */
+public class MyMojo extends AbstractMojo {
+
+	private static final String[] INCLUDES_DEFAULT = { "java", "xml", "properties" };
+
+	/**
+	 * @parameter expression= "${project.basedir}"
+	 * @required
+	 * @readonly
+	 */
+	private File basedir;
+
+	/**
+	 * @parameter expression= "${project.build.sourceDirectory}"
+	 * @required
+	 * @readonly
+	 */
+	private File sourceDirectory;
+
+	/**
+	 * @parameter expression= "${project.build.testSourceDirectory}"
+	 * @required 
+	 * @readonly
+	 */
+	private File testSourceDirectory;
+
+	/**
+	 * @parameter expression= "${project.build.resources}" 
+	 * @required 
+	 * @readonly
+	 */
+	private List<Resource> resources;
+
+	/**
+	 * @parameter expression= "${project.build.testResources}" 
+	 * @required 
+	 * @readonly 
+	 */
+	private List<Resource> testResources;
+
+	/**
+	 * 将包括在内的文件类型进行计数
+	 *
+	 * @parameter
+	 */
+	private String[] includes;
+
+	public void execute() throws MojoExecutionException {
+		if (includes == null || includes.length == 0) {
+			includes = INCLUDES_DEFAULT;
+		}
+		try
+
+		{
+			countDir(sourceDirectory);
+			countDir(testSourceDirectory);
+			for (Resource resource : resources) {
+				countDir(new File(resource.getDirectory()));
+			}
+			for (Resource resource : testResources) {
+				countDir(new File(resource.getDirectory()));
+			}
+		} catch (IOException e) {
+			throw new MojoExecutionException("无法计算代码行.", e);
+		}
+
+	}
+
+	private void countDir(File dir) throws IOException {
+		if (!dir.exists()) {
+			return;
+		}
+		List<File> collected = new ArrayList<>();
+		collectFiles(collected, dir);
+		int lines = 0;
+		for (File sourceFile : collected) {
+			lines += countLine(sourceFile);
+		}
+		String path = dir.getAbsolutePath().substring(basedir.getAbsolutePath().length());
+		getLog().info("目录：" + path + "，有 " + collected.size() + "个文件， 共计" + lines + " 行代码 ");
+	}
+
+	/**
+	 * 递归收集目录下所有应该被统计的文件
+	 * @param collected
+	 * @param file
+	 */
+	private void collectFiles(List<File> collected, File file) {
+		if (file.isFile()) {
+			for (String include : includes) {
+				if (file.getName().endsWith("." + include)) {
+					collected.add(file);
+					break;
+				}
+			}
+		} else {
+			for (File sub : file.listFiles()) {
+				collectFiles(collected, sub);
+			}
+		}
+
+	}
+
+	/**
+	 * 统计单个文件的行数
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 */
+	private int countLine(File file) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+		int line = 0;
+		try {
+			while (reader.ready()) {
+				reader.readLine();
+				line++;
+			}
+		} finally {
+			reader.close();
+		}
+		return line;
+	}
+}
+
+```
+每个插件目标类，或者说Mojo，都必须继承抽象类`AbstractMojo`并实现`execute()`方法，只有这样Maven才能识别该插件目标，并执行`execute()`方法中的行为。  
+提供`@goal`标注，任何一个Mojo都必须使用改标注写明自己的目标名称，有了目标定义后，才能在项目中配置该插件目标，或者在命令行调用它。  
+总结：  
+创建一个Mojo锁必要的三项工作：继承抽象类`AbstractMojo`，实现`execute()`方法，提供`@goal`标注。  
+
+插件配置点  
+使用`parameter`参数表示用户可以在使用该插件的时候在POM文件中配置改字段。如上述代码中的： 
+```java
+/**
+ * 将包括在内的文件类型进行计数
+ *
+ * @parameter
+ */
+private String[] includes;
+```
+
+另外的说明：  
+- `@required`：表示该Mojo参数是必须的，如果使用了该标注，用户没有配置值且没有默认值的话会报错。  
+- `@readonly`：表示该Mojo参数是只读的，如果使用了该标注，用户就无法对其进行配置。
+- `@parameter expression="${aSystemProperties}"`：使用系统属性表达式对Mojo属性赋值。
+
+插件写好之后编译并使用`maven install`安装到本地仓库后就可以在其他项目中使用。  
+如：
+```xml
+<build>
+    <plugins>
+		<plugin>
+			<groupId>com.epoint.maven.plugin</groupId>
+			<artifactId>CodeCountPlugin</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<executions>
+				<execution>
+					<goals>
+						<goal>codecount</goal>
+					</goals>
+					<phase>package</phase>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+</build>
+```
+其中：
+`<goal>`表示使用的插件目标，即代码中的`@goal`标注定义的名称。  
+`<phase>`表示使用插件的生命周期阶段，此处使用的是`package`打包阶段。  
+
+针对上面所说的,使用`parameter`参数表示用户可以在使用该插件的时候在POM文件中配置改字段。示例如下：
+```xml
+<build>
+    <plugins>
+		<plugin>
+			<groupId>com.epoint.maven.plugin</groupId>
+			<artifactId>CodeCountPlugin</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<configuration>
+				<includes>
+					<include>java</include>
+					<include>html</include>
+				</includes>
+			</configuration>
+			<executions>
+				<execution>
+					<goals>
+						<goal>codecount</goal>
+					</goals>
+					<phase>package</phase>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+</build>
+```
+
+调用插件后，打包的输出会多出如下的行：
+```
+[INFO] --- CodeCountPlugin:0.0.1-SNAPSHOT:codecount (default) @ EpointPB.StandradCore ---
+[INFO] 目录：\src\main\java，有 148个文件， 共计31072 行代码 
+[INFO] 目录：\src\test\java，有 0个文件， 共计0 行代码 
+[INFO] 目录：\src\main\resources，有 0个文件， 共计0 行代码 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 12.395 s
+[INFO] Finished at: 2020-04-28T14:49:15+08:00
+[INFO] Final Memory: 38M/307M
+[INFO] ------------------------------------------------------------------------
+```
