@@ -815,26 +815,26 @@ private String[] includes;
 ```xml
 <build>
     <plugins>
-		<plugin>
-			<groupId>com.epoint.maven.plugin</groupId>
-			<artifactId>CodeCountPlugin</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<configuration>
-				<includes>
-					<include>java</include>
-					<include>html</include>
-				</includes>
-			</configuration>
-			<executions>
-				<execution>
-					<goals>
-						<goal>codecount</goal>
-					</goals>
-					<phase>package</phase>
-				</execution>
-			</executions>
-		</plugin>
-	</plugins>
+	<plugin>
+	 <groupId>com.epoint.maven.plugin</groupId>
+	 <artifactId>CodeCountPlugin</artifactId>
+	 <version>0.0.1-SNAPSHOT</version>
+	 <configuration>
+	<includes>
+		<include>java</include>
+		<include>html</include>
+	</includes>
+	</configuration>
+	<executions>
+		<execution>
+			<goals>
+				<goal>codecount</goal>
+			</goals>
+			<phase>package</phase>
+		</execution>
+	</executions>
+	</plugin>
+    </plugins>
 </build>
 ```
 
