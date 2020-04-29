@@ -1,4 +1,4 @@
-# Maven知识点2
+# Maven知识点（全）
 
 ## 一、Maven的作用
 目的是一个可以用于构建和管理任何基于Java的项目的工具，想要一种标准的方式来构建项目，清晰地定义项目的组成，一种简单的方式来发布项目信息，以及一种在多个项目中共享JAR的方式。  
@@ -252,7 +252,25 @@ note：用户配置优先于全局配置。
 私服：如公司搭建的基于内网可访问的maven服务器；主要是指局域网内的maven服务器。  
 
 ### 6.2、镜像
+如果仓库X可以提供仓库Y存储的所有内容，那么就可以认为X是Y的一个镜像。  
+任何一个可以从仓库Y获得的构件，都能够从它的镜像中获取。  
+
 它会拦截maven对`remote repository`的相关请求，把请求里的`remote repository`地址，重定向到`mirror`里配置的地址。配置`mirror`的目的一般是出于网速考虑。 
+
+下面的xml示例中，<mirrorOf>的值为`central`,表示该配置为中央仓库的镜像，任何对于中央仓库的请求都会转至该镜像，用户也可以使用同样的方法配置其他仓库的镜像。另外三个元素id、name、url与一般仓库配置无异，表示该镜像仓库的唯一标识符、名称以及地址。类似地，如果该镜像需要认证，也可以基于该id配置仓库认证。  
+
+```xml
+  <mirrors>
+<!-- 配置镜像 -->
+ 	<mirror>
+	  <id>epoint-nexus</id>
+	      <name>Epoint Nexus</name>
+	      <url>http://192.168.0.99:8081/nexus/content/groups/public/</url>
+	  <mirrorOf>central</mirrorOf>
+	</mirror>
+  </mirrors>
+```
+
 ## 七、POM文件
 Maven项目的核心是pom.xml。项目对象模型(POM project object model)，定义了项目的基本信息，用于描述项目如何构建，声明项目依赖等。  
 ### 7.1、pom文件中主要标签的含义
@@ -300,6 +318,7 @@ Maven项目的核心是pom.xml。项目对象模型(POM project object model)，
 - `<dependencyManagement>`标签和`<dependencies>`标签区别：  
 `<dependencyManagement>`只是对版本进行管理，不会实际引入jar。  
 `<dependencies>`会实际下载jar包。  
+
 
 ## 八、依赖
 ### 8.1、依赖的原则
@@ -361,6 +380,37 @@ system示例：
 	</dependencies>
 </dependencyManagement>
 ```
+
+### 8.4、聚合与继承
+#### 8.4.1、聚合
+如果想要一次构建两个项目，而不是两个模块目录下分别执行maven指令，这时候就需要使用Maven聚合。  
+使用Maven聚合的几个特点：  
+- pom.xml中`packaging`值必须为`POM`，否则聚合POM会报错
+- 模块使用`<modules>`标签和`<module>`标签定义  
+
+为了方便定义，通常将聚合模块放在项目目录的最顶层，其他模块则作为聚合模块的子目录存在，可读性较高。但目录结构并非强制一定要是父子结构。  
+
+Maven首先会解析聚合模块的POM文件，分析要构建的模块，并计算出一个反应堆构建顺序，然后根据顺序依次构建各模块。反应堆是所有模块组成的一个构建结构。
+
+#### 8.4.2、继承
+类型于面向对象设计中的继承，可以创建POM的父子结构，在父POM中声明一些配置供子POM继承，以实现“一处声明，多处使用”的目的。
+
+继承的特点
+- 父模块只是为了帮助消除配置重复，因此他本身不包含除POM之外的项目文件。
+- 父模块的pom.xml的`packaging`值必须要为`POM`，和聚合一样。否则子工程会报错。
+- 子模块通过<parent>标签继承父模块POM
+
+#### 8.4.3、聚合和继承的关系
+##### 区别：
+- 对于聚合模块来说，他知道有哪些模块被聚合，但对于被聚合的模块来说，不知道聚合模块的存在。
+- 对于继承关系的父POM来说，他不知道有哪些子模块继承了它，子模块都知道父模块是什么。
+
+##### 相同点：
+- `packaging`的值都是`POM`
+- 除了POM之外都没有实际内容
+
+为了方便，一个模块POM可以既是聚合模块POM，也是父模块POM。  
+
 
 ## 九、生命周期
 Maven有三大生命周期：`clean`、`default`和`site`  
@@ -815,26 +865,26 @@ private String[] includes;
 ```xml
 <build>
     <plugins>
-	<plugin>
-	 <groupId>com.epoint.maven.plugin</groupId>
-	 <artifactId>CodeCountPlugin</artifactId>
-	 <version>0.0.1-SNAPSHOT</version>
-	 <configuration>
-	<includes>
-		<include>java</include>
-		<include>html</include>
-	</includes>
-	</configuration>
-	<executions>
-		<execution>
-			<goals>
-				<goal>codecount</goal>
-			</goals>
-			<phase>package</phase>
-		</execution>
-	</executions>
-	</plugin>
-    </plugins>
+		<plugin>
+			<groupId>com.epoint.maven.plugin</groupId>
+			<artifactId>CodeCountPlugin</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<configuration>
+				<includes>
+					<include>java</include>
+					<include>html</include>
+				</includes>
+			</configuration>
+			<executions>
+				<execution>
+					<goals>
+						<goal>codecount</goal>
+					</goals>
+					<phase>package</phase>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
 </build>
 ```
 
@@ -852,3 +902,11 @@ private String[] includes;
 [INFO] Final Memory: 38M/307M
 [INFO] ------------------------------------------------------------------------
 ```
+
+## 十一、其他知识点
+### 11.1、关于发布Jar包
+发布Jar包到私服其实是发布了Jar包和POM文件两个单独的内容。可通过本地仓库发现这一点。  
+另外，在pom文件中`<dependency>`标签下可通过`<type>`指定引入的类型，比如`jar`或`pom`，默认是`jar`。
+
+### 11.2、POM中的<Profile>标签
+主要用于针对不同环境的构建
