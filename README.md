@@ -15,8 +15,8 @@
   - [x] <a href="/notes/20190820/JUnit单元测试.md" target="_blank">JUnit单元测试-1</a>
 
 - 工具
-  - [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点1</a>  
-  - [x] <a href="/notes/20200428/maven2.md" target="_blank">Maven知识点2</a>  
+  - [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点（基础）</a>  
+  - [x] <a href="/notes/20200428/maven2.md" target="_blank">Maven知识点（全）</a>  
   
 ### 二、数据库
 - Redis  
