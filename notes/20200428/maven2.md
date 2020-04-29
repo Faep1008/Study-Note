@@ -913,3 +913,7 @@ private String[] includes;
 
 ### 11.2、POM中的<Profile>标签
 主要用于针对不同环境的构建
+
+### 11.3、`<parent>`标签中的`<relativePath>`标签
+`<relativePath>`表示父模块POM的相对路径，当项目构建时，Maven会首先根据`relativePath`检查父POM，如果找不到就从本地仓库找。  
+`relativePath`的默认值是`../pom.xml`，Maven默认父POM在上一层目录下。 
