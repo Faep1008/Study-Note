@@ -24,7 +24,7 @@
   - [ ] webservice
   - [ ] XML解析
   - [ ] 国密算法
-  - [ ] 混淆加密
+  - [ ] <a href="/notes/20200604/混淆加密.md" target="_blank">混淆加密</a>  
   
 ### 二、数据库
 - Redis  
