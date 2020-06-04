@@ -18,6 +18,13 @@
   - [x] <a href="/notes/20190708/maven.md" target="_blank">Maven知识点（基础）</a>  
   - [x] <a href="/notes/20200428/maven2.md" target="_blank">Maven知识点（全）</a>  
   - [x] <a href="/notes/20200604/Log4j2.md" target="_blank">Log4j2</a>  
+  - [ ] 火焰图
+  - [ ] Druid
+  - [ ] websocket
+  - [ ] webservice
+  - [ ] XML解析
+  - [ ] 国密算法
+  - [ ] 混淆加密
   
 ### 二、数据库
 - Redis  
