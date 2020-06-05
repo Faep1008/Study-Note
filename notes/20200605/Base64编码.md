@@ -24,7 +24,7 @@ aaaa
 |24    |    22   |    5    |    33    |    24   |   16  |  0    |  0  |
 编码后的Base为：YWFhYQ==
 
-附Base64对照表：  
+## 附Base64对照表 
 
 
 <img src="base64.png"/>
