@@ -25,3 +25,4 @@ aaaa
 编码后的Base为：YWFhYQ==
 
 附Base64对照表：  
+<img src="Base64.png">
