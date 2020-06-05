@@ -25,6 +25,7 @@
   - [ ] XML解析
   - [ ] 国密算法
   - [ ] <a href="/notes/20200604/混淆加密.md" target="_blank">混淆加密</a>  
+  - [ ] <a href="/notes/20200605/Base64编码.md" target="_blank">Base64编码</a>  
 - 代码片段
   - [ ] <a href="/notes/20200605/Java Socket编程.md" target="_blank">Java Socket编程</a>  
   
