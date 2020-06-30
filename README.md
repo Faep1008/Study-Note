@@ -50,6 +50,10 @@
 - [ ] Spring Framework
 - [ ] Spring MVC
 - [ ] Spring boot
+  - [x] <a href="/notes/20200630/SpringBoot 工程搭建.md" target="_blank">SpringBoot 工程搭建</a>  
+  - [x] <a href="/notes/20200630/SpringBoot整合Log4j2.md" target="_blank">SpringBoot整合Log4j2</a>  
+  - [x] <a href="/notes/20200630/SpringBoot整合Mybatis（注解方式）.md" target="_blank">SpringBoot整合Mybatis（注解方式）</a>  
+  - [x] <a href="/notes/20200630/SpringBoot整合Druid.md" target="_blank">SpringBoot整合Druid</a>  
 - [ ] Spring Cloud
 
 
