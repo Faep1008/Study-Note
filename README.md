@@ -9,7 +9,9 @@
   
 - JAVA并发编程
 
-- JVM
+- JVM及性能优化
+  - [x] <a href="/notes/20200702/JVM Heap Dump（堆转储文件）的生成和MAT的使用.md" target="_blank">JVM Heap Dump（堆转储文件）的生成和MAT的使用</a>  
+  - [x] <a href="/notes/20200702/JAVA线程快照及案例分析.md" target="_blank">JAVA线程快照及案例分析</a>  
 
 - JUnit
   - [x] <a href="/notes/20190820/JUnit单元测试.md" target="_blank">JUnit单元测试-1</a>
