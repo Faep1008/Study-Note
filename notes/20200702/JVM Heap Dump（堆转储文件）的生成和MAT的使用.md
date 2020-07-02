@@ -32,7 +32,7 @@ Server is ready.
 Eclipse Memory Analyzer(MAT)是Eclipse提供的一款用于Heap Dump文件的工具，操作简单明了，下面将详细进行介绍。
 #### 主界面
 第一次打开因为需要分析dump文件，所以需要等待一段时间进行分析，分析完成之后dump文件目录下面的文件信息如下：  
-<img src="img/MAT1.png">  
+<img src="img\MAT1.png"/>  
 上图中 testqd.hprof 文件是原始的Heap Dump文件，zip文件是生成的html形式的报告文件。
 打开之后，主界面如下所示：
 <img src="img/MAT2.png">  
