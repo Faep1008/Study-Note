@@ -32,12 +32,12 @@ Server is ready.
 Eclipse Memory Analyzer(MAT)是Eclipse提供的一款用于Heap Dump文件的工具，操作简单明了，下面将详细进行介绍。
 #### 主界面
 第一次打开因为需要分析dump文件，所以需要等待一段时间进行分析，分析完成之后dump文件目录下面的文件信息如下：  
-<img src="/img/MAT1.png"/>  
-上图中 testqd.hprof 文件是原始的Heap Dump文件，zip文件是生成的html形式的报告文件。
-打开之后，主界面如下所示：
-<img src="img/MAT2.png">  
-接下来介绍界面中常用到的功能：
-<img src="img/MAT3.png">  
+<img src="img/MAT1.png" />  
+上图中 testqd.hprof 文件是原始的Heap Dump文件，zip文件是生成的html形式的报告文件。  
+打开之后，主界面如下所示：  
+<img src="img/MAT2.png" />  
+接下来介绍界面中常用到的功能：  
+<img src="img/MAT3.png" />  
 
 #### Overview
 Overview视图，即概要界面，显示了概要的信息，并展示了MAT常用的一些功能。  
@@ -54,20 +54,21 @@ Overview视图，即概要界面，显示了概要的信息，并展示了MAT常
 支配树，列出Heap Dump中处于活跃状态中的最大的几个对象，默认按 retained size进行排序，因此很容易找到占用内存最多的对象。
 #### Top Consumers 
 按类、类加载器和包分别进行查询，并以饼图的方式列出最大的几个对象。
-#### Duplicate Classes 列出被加载多次的类，结果按类加载器进行分组，目标是加载同一个类多次被类加载器加载。使用该工具很容易找到部署应用的时候使用了同一个库的多个版本。
+#### Duplicate Classes 
+列出被加载多次的类，结果按类加载器进行分组，目标是加载同一个类多次被类加载器加载。使用该工具很容易找到部署应用的时候使用了同一个库的多个版本。
 #### OQL
 MAT提供了一个对象查询语言（OQL），跟SQL语言类似，将类当作表、对象当作记录行、成员变量当作表中的字段。通过OQL可以方便快捷的查询一些需要的信息，是一个非常有用的工具。
 #### Thread Overview
 此工具可以查看生成Heap Dump文件的时候线程的运行情况，用于线程的分析。
 #### Run Expert System Test
 可以查看分析完成的HTML形式的报告，也可以打开已经产生的分析报告文件，子菜单项如下图所示：  
-<img src="img/MAT4.png">   
+<img src="img/MAT4.png" />   
 常用的主要有Leak Suspects和Top Components两种报告：
 - Leak Suspects 可以说是非常常用的报告了，该报告分析了 Heap Dump并尝试找出内存泄漏点，最后在生成的报告中对检测到的可疑点做了详细的说明；
 - Top Components 列出占用总堆内存超过1%的对象。  
 
 #### Open Query Browser
 提供了在分析过程中用到的工具，通常都集成在了右键菜单中，在后面具体举例分析的时候会做详细的说明。如下图：  
-<img src="img/MAT5.png">  
+<img src="img/MAT5.png" />  
 #### Find Object by address
 通过十六进制的地址查找对应的对象
